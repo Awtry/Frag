@@ -24,8 +24,6 @@ class Frag_Menu : Fragment(R.layout.fragment_frag__menu) {
         Disparador_Boton()
     }
 
-
-
     //region iniciador
 
     private lateinit var ViewPrincipal: ConstraintLayout
