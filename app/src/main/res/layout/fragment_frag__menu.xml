@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frag_Menu">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Vista_Principal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <Button
+            android:id="@+id/btnIZQ"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:flow_verticalAlign="center"
+
+            android:background="@drawable/ic__49_left_arrow_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/IMG_PRINCIPAL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/IMG_PRINCIPAL"
+            android:layout_width="215dp"
+            android:layout_height="355dp"
+
+            android:src="@drawable/rojo_y_flores"
+            app:layout_constraintStart_toEndOf="@id/btnIZQ"
+            app:layout_constraintEnd_toStartOf="@id/btnDER"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Button
+            android:id="@+id/btnDER"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:background="@drawable/ic__33_right_arrow_8"
+            app:layout_constraintStart_toEndOf="@id/IMG_PRINCIPAL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <Button
+            android:id="@+id/btnAl_Detalle"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:text="@string/vamonos"
+            app:layout_constraintTop_toBottomOf="@id/IMG_PRINCIPAL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
