@@ -11,6 +11,7 @@ import kotlinx.parcelize.Parcelize
 class INFO_FOTO(
     var img: Int = R.drawable.rojo_y_flores,
     var descripcion: Foto = Foto.PRIMAVERA,
+    var sonidito: Sonido = Sonido.SONIDO_JET,
     var Mi_favorito: Boolean = false
 ): Parcelable {
 

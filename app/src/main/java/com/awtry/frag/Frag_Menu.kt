@@ -49,7 +49,7 @@ class Frag_Menu : Fragment(R.layout.fragment_frag__menu) {
         IMG_Principal = requireView().findViewById(R.id.IMG_PRINCIPAL)
 
         //Agregar el conteo de las fotos
-       // mis_imagenes = Le_Foto.ConteoTotal()
+        mis_imagenes = Le_Foto.ConteoTotal()
 
     }
 

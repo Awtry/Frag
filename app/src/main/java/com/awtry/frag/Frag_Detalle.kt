@@ -3,6 +3,7 @@ package com.awtry.frag
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,18 +34,26 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
         preferences = requireActivity().getSharedPreferences(PREFS, Context.MODE_PRIVATE)
        // Le_Foto = savedInstanceState?.getParcelable(FAVORITE_USER) ?: INFO_FOTO()
 
-        Le_Foto = Es_Fav()
+        Le_Foto = INFO_FOTO()
+        //Le_Foto = Es_Fav()
 
         Le_Foto = requireArguments().getParcelable("Fotito")?: INFO_FOTO()
+
+
+        //Le_Foto = requireArguments().getParcelable("Mi_Fotito") ?: INFO_FOTO()
+        //No_Foto = intent.getIntExtra("No_Foto", 0)
+        //Mi_Fav = Le_Foto.Mi_favorito
 
         initviews()
         Disparador_Boton_Detalle()
     }
 
     //Al parecer no funciona al querer
-   /* override fun onCreate(savedInstanceState: Bundle?) {
+    /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mMyFragment = getSupportFragmentManager().getFragment(savedInstanceState, "myFragmentName");
+       // mMyFragment = getSupportFragmentManager().getFragment(savedInstanceState, "myFragmentName");
+        Le_Foto = requireArguments().getParcelable("Fotito")?: INFO_FOTO()
+
     }*/
 
     /*override fun onSaveInstanceState(outState: Bundle) {
@@ -52,9 +61,9 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
         getSupportFragmentManager().putFragment(outState, "myFragmentName", mMyFragment);
     }*/
 
-    private fun Guardar_Pref(FAV: INFO_FOTO? = null){
+   /* private fun Guardar_Pref(FAV: INFO_FOTO? = null){
         preferences.edit().putString(FAVORITE_USER, moshi.adapter(INFO_FOTO::class.java).toJson(FAV)).apply()
-    }
+    }*/
 
 
     private fun saveUserLikes(FAV: INFO_FOTO? = null){
@@ -74,6 +83,7 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
 
     private lateinit var txtDetalle: TextView
     private lateinit var btnFAV: ImageView
+    private lateinit var btnMusica: ImageView
     private lateinit var IMG_Detalle: ImageView
 
     //endregion
@@ -82,8 +92,10 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
         IMG_Detalle = requireView().findViewById(R.id.IMG_DETALLE)
         btnFAV = requireView().findViewById(R.id.btn_favorito)
         txtDetalle = requireView().findViewById(R.id.txv_Detalle)
+        btnMusica = requireActivity().findViewById(R.id.btnMusical)
 
         btnFAV.setImageResource(R.drawable.ic_star_2)
+        btnMusica.setImageResource(R.drawable.sound)
 
         //Muestra imagen viajera
         IMG_Detalle.setImageResource(Le_Foto.img)
@@ -100,11 +112,13 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
         saveUserLikes(Le_Foto)
     }
 
+    fun cantame(sound: Int) = (requireActivity() as MainActivity).Sonidito(sound)
+
     private fun Disparador_Boton_Detalle(){
         IMG_Detalle.setOnClickListener{
-            (requireActivity() as MainActivity).replaceFragment(Frag_Detalle().apply {
+            (requireActivity() as MainActivity).replaceFragment(Frag_Full_Photo().apply {
                 arguments = Bundle().apply {
-                    putParcelable("Foto_Final", Le_Foto)
+                    putParcelable("Foto_Final",Le_Foto)
                 }
             })
         }
@@ -112,6 +126,9 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
         btnFAV.setOnClickListener{
             cambia_fav()
         }
+
+        btnMusica.setOnClickListener{
+            cantame(R.raw.sound_1)
+        }
     }
-}
 }

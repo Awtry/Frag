@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 R.anim.slide_in_left,
                 R.anim.slide_out_right
             )
-            replace(R.id.container, fragment)
+            replace(R.id.Padre, fragment)
             addToBackStack(fragment.tag)
             commit()
         }
