@@ -42,7 +42,7 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
 
         //Le_Foto = requireArguments().getParcelable("Mi_Fotito") ?: INFO_FOTO()
         //No_Foto = intent.getIntExtra("No_Foto", 0)
-        //Mi_Fav = Le_Foto.Mi_favorito
+        Mi_Fav = Le_Foto.Mi_favorito
 
         initviews()
         Disparador_Boton_Detalle()
@@ -100,9 +100,11 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
         //Muestra imagen viajera
         IMG_Detalle.setImageResource(Le_Foto.img)
         txtDetalle.setText(Le_Foto.descripcion.text)
+
     }
 
     private fun cambia_fav(){
+        Mi_Fav != Mi_Fav
         if (Mi_Fav){
             btnFAV.setImageResource(R.drawable.ic_star_2)
         }else{
@@ -128,7 +130,7 @@ class Frag_Detalle : Fragment(R.layout.fragment_frag__detalle) {
         }
 
         btnMusica.setOnClickListener{
-            cantame(R.raw.sound_1)
+            cantame(Le_Foto.sonidito.Int)
         }
     }
 }

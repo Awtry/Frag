@@ -17,17 +17,17 @@ class INFO_FOTO(
 
     companion object{
         val Photos = arrayListOf(
-            INFO_FOTO(R.drawable.puesta_de_sol, Foto.PUESTA_SOL, false),
-            INFO_FOTO(R.drawable.estrella_primavera, Foto.PRIMAVERA, false),
-            INFO_FOTO(R.drawable.resumen_aprox_1, Foto.RESUMEN, false),
-            INFO_FOTO(R.drawable.rojo_y_flores, Foto.ROJO_FLOR, false),
-            INFO_FOTO(R.drawable.venti, Foto.VENTI, false),
+            INFO_FOTO(R.drawable.puesta_de_sol, Foto.PUESTA_SOL,Sonido.SONIDO_JET, false),
+            INFO_FOTO(R.drawable.estrella_primavera, Foto.PRIMAVERA, Sonido.SONIDO_ESPACIAL,false),
+            INFO_FOTO(R.drawable.resumen_aprox_1, Foto.RESUMEN,Sonido.SONIDO_ELECTRICO, false),
+            INFO_FOTO(R.drawable.rojo_y_flores, Foto.ROJO_FLOR,Sonido.SONIDO_VIEJO, false),
+            INFO_FOTO(R.drawable.venti, Foto.VENTI,Sonido.SONIDO_TROMPETA, false),
 
-            INFO_FOTO(R.drawable.ic_prim, Foto.LAPISLAZULI, false),
-            INFO_FOTO(R.drawable.ic_seg, Foto.RUBI, false),
-            INFO_FOTO(R.drawable.ic_terc, Foto.TOPACIO, false),
-            INFO_FOTO(R.drawable.ic_cuar, Foto.DIAMANTE, false),
-            INFO_FOTO(R.drawable.ic_quin, Foto.PERIDOT, false)
+            INFO_FOTO(R.drawable.ic_prim, Foto.LAPISLAZULI,Sonido.SONIDO_MISTERIO, false),
+            INFO_FOTO(R.drawable.ic_seg, Foto.RUBI, Sonido.SONIDO_ROBOT,false),
+            INFO_FOTO(R.drawable.ic_terc, Foto.TOPACIO,Sonido.SONIDO_ROCK, false),
+            INFO_FOTO(R.drawable.ic_cuar, Foto.DIAMANTE,Sonido.SONIDO_NOKIA, false),
+            INFO_FOTO(R.drawable.ic_quin, Foto.PERIDOT,Sonido.SONIDO_CLICK, false)
 
         )
     }

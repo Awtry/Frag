@@ -1,6 +1,6 @@
 package com.awtry.frag
 
-enum class Sonido(val raw: Int) {
+enum class Sonido(val Int: Int) {
 
     SONIDO_ESPACIAL(R.raw.sound_1),
     SONIDO_ELECTRICO(R.raw.sound_2),
