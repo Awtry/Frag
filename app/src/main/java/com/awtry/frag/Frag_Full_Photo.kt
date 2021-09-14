@@ -15,7 +15,7 @@ class Frag_Full_Photo : Fragment(R.layout.fragment_frag__full__photo) {
     override fun onResume() {
         super.onResume()
 
-        Le_Foto = intent.getParcelableExtra("Foto_Final") ?: INFO_FOTO()
+        Le_Foto = requireArguments().getParcelable("Foto_Final") ?: INFO_FOTO()
 
         initview()
     }
@@ -23,7 +23,7 @@ class Frag_Full_Photo : Fragment(R.layout.fragment_frag__full__photo) {
     private lateinit var IMG_Full: ImageView
 
     private fun initview(){
-        IMG_Full = findViewById(R.id.IMG_FULL)
+        IMG_Full = requireView().findViewById(R.id.IMG_FULL)
         IMG_Full.setImageResource(Le_Foto.img)
     }
 

@@ -82,7 +82,6 @@ class Frag_Menu : Fragment(R.layout.fragment_frag__menu) {
                 arguments = Bundle().apply {
                     putParcelable("Fotito", mis_imagenes[centinela] )
                 }
-
             })
         }
 
