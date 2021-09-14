@@ -80,7 +80,7 @@ class Frag_Menu : Fragment(R.layout.fragment_frag__menu) {
         btnDetalle.setOnClickListener{
             (requireActivity() as MainActivity).replaceFragment(Frag_Detalle().apply {
                 arguments = Bundle().apply {
-                    //putParcelable("Fotito", ropa[index])
+                    putParcelable("Fotito", mis_imagenes[centinela] )
                 }
 
             })
